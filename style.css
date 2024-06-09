@@ -3,6 +3,7 @@
 }
 .dark-theme {
   --bg-top-image: 0 0 url(./images/bg-desktop-dark.jpg) no-repeat;
+  --bg-top-image-mobile: 0 0 url(./images/bg-mobile-dark.jpg) no-repeat;
   --main-bg: hsl(235, 21%, 11%);
   --todo-bg: hsl(235, 24%, 19%);
   --todo-shadow: hsl(235, 21%, 11%);
@@ -12,8 +13,9 @@
 
 .light-theme {
   --bg-top-image: 0 0 url(./images/bg-desktop-light.jpg) no-repeat;
-  --main-bg: hsl(0, 0%, 98%);
-  --todo-bg: hsl(236, 33%, 92%);
+  --bg-top-image-mobile: 0 0 url(./images/bg-mobile-light.jpg) no-repeat;
+  --main-bg: hsl(236, 33%, 92%);
+  --todo-bg: hsl(0, 0%, 98%);
   --todo-shadow: hsl(235, 19%, 35%);
   --text-color: hsl(236, 9%, 61%);
   --text-color-hover: hsl(235, 21%, 11%);
@@ -213,6 +215,10 @@ ul li:hover .remove {
   display: block;
 }
 
+.display-none {
+  display: none;
+}
+
 .bottom-items {
   display: flex;
   align-items: baseline;
@@ -220,11 +226,12 @@ ul li:hover .remove {
   padding: 20px 25px;
   letter-spacing: 0.5px;
   font-size: 0.8rem;
+  background: var(--todo-bg);
   color: hsl(234, 11%, 52%);
 }
 
-.filter {
-  /* margin-right: 47px; */
+.mobile-view .filter {
+  display: none;
 }
 
 .filter input[type='radio'] {
@@ -262,4 +269,42 @@ ul li:hover .remove {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 600px) {
+  body {
+    background: var(--bg-top-image-mobile);
+    background-color: var(--main-bg);
+    background-size: contain;
+    color: var(--text-color);
+    padding: 0 30px;
+  }
+
+  ul li label {
+    font-size: 1rem;
+  }
+
+  .remove {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 25px;
+    top: 25px;
+  }
+  .bottom-items .filter {
+    display: none;
+  }
+
+  .mobile-view .filter {
+    display: flex;
+    justify-content: center;
+    background: var(--todo-bg);
+    border-radius: 5px;
+    padding: 10px 30px;
+    margin-top: 40px;
+    width: 100%;
+    letter-spacing: 0.5px;
+    font-size: 0.8rem;
+    color: hsl(234, 11%, 52%);
+  }
 }
