@@ -39,7 +39,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/Olamiposi-cloud-coder/todo-app.git]
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: https://olamiposi-cloud-coder.github.io/todo-app/
 
 ## My process
 
